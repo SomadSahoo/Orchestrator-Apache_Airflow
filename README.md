@@ -74,7 +74,7 @@ repositories and running the Docker containers with `docker-compose up -d`:
 * esdl-add-price-profile-adapter
 * essim-adapter
 
-Now we can run the demo by running the DAG. For this we also need the appropriate configuration file, 
+Now we can run the multi-model by running the DAG. For this we also need the appropriate configuration file, 
 which can be found in [`./data/etm_essim_opera.json`]. 
 We copy this configuration and then in 
 Airflow we select the `etm_essim_demo` DAG. We then select the run button (▶) and select to Trigger 
