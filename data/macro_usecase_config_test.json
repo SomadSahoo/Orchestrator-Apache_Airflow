@@ -1,0 +1,49 @@
+{
+    "metadata": {
+        "experiment": "Macro_Trial_1",
+        "project": "Macro Case",
+        "run": "MM_workflow_run_1",
+        "scenario": "National Infra",
+        "user": "mmvib"
+    },
+    "modules": {
+        "model_registry": "http://mmvib-registry:9200/registry/"
+    },
+    "databases": {
+        "Influx": {
+            "api_addr": "influxdb:8086",
+            "db_config": {
+                "db_name": "energy_profiles",
+                "use_ssl": false
+            }
+        },
+        "Minio": {
+            "api_addr": "minio:9000",
+            "db_config": {
+                "access_key": "admin",
+                "secret_key": "password",
+                "secure": false
+            }
+        }
+    },
+    "tasks": {
+        "Opera": {
+            "api_id": "OPERA",
+            "api_addr": "host.docker.internal:9301",
+            "model_config": {
+                "input_esdl_file_path": "macro-use-case/ETM/etm_range_output.esdl",
+                "output_esdl_file_path": "macro-use-case/OPERA/opera_optimized_capacities.esdl"
+            },
+            "type": "computation"
+        },
+        "Moter": {
+            "api_id": "MOTER",
+            "api_addr": "host.docker.internal:9302",
+            "model_config": {
+                "input_esdl_file_path": "macro-use-case/ConnectInfra/connect-infra-output.esdl",
+                "output_esdl_file_path": "macro-use-case/MOTER/moter_output.esdl"
+            },
+            "type": "computation"
+        }
+    }
+}
