@@ -43,7 +43,7 @@ After that the Airflow orchestrator can be deployed.
 docker-compose up -d
 ```
 
-By default the command-line interface is reachable on [http://localhost:8080/](http://localhost:8080/).
+By default the command-line interface is reachable on [http://localhost:8080/].
 In addition, a shared bash or shell command line interface can be interacted with by using `docker exec` 
 on any of the Airflow services. For example:
 
@@ -62,8 +62,7 @@ DAG /w Config.
 ## ETM ESSIM OPERA
 
 To demonstrate the model orchestrator, there is a demo available under the `etm_essim_opera` DAG. The 
-complete specification of this demo is found in [`./dags/etm_essim_opera.py`]
-(https://github.com/MultiModelling/Model-Orchestrator/blob/main/dags/etm_essim_demo.py). This demo is based on the 
+complete specification of this demo is found in [`./dags/etm_essim_opera.py`]. This demo is based on the 
 concept of model-handler interaction. Inside the task graph nodes of a DAG, handlers are instantiated 
 that interact with external handlers.
 
@@ -76,8 +75,7 @@ repositories and running the Docker containers with `docker-compose up -d`:
 * essim-adapter
 
 Now we can run the demo by running the DAG. For this we also need the appropriate configuration file, 
-which can be found in [`./data/etm_essim_opera.json`]
-(https://github.com/MultiModelling/Model-Orchestrator/blob/main/common/configs/etm_essim_demo.json). 
+which can be found in [`./data/etm_essim_opera.json`]. 
 We copy this configuration and then in 
 Airflow we select the `etm_essim_demo` DAG. We then select the run button (▶) and select to Trigger 
 DAG /w Config. In the config box we paste the JSON configuration that we have previously copied. 
